@@ -1,0 +1,38 @@
+{
+	"include": [
+		"src/**/*",
+		"locale/**/*",
+		"__template__/**/*"
+	],
+	"exclude": [
+		"node_modules",
+		"gatsby"
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*",
+			],
+			"@locale/*": [
+				"./locale/*"
+			]
+    },
+		"module": "commonjs",
+		"target": "es5",
+		"allowJs": true,
+    "sourceMap": true,
+    "jsx": "react",
+		"lib": [
+			"dom",
+			"es2016"
+		],
+		"types": [
+			"node",
+		],
+		"typeRoots": [
+			// "node_modules/gatsby"
+		],
+		"allowSyntheticDefaultImports": true,
+	}
+}

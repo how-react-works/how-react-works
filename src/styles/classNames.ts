@@ -1,0 +1,1 @@
+export const CLASS_EMPTY_LINK = 'empty_link'
