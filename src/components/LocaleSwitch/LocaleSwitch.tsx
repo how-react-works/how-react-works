@@ -66,8 +66,15 @@ export default class LocaleSwitch extends Component<Props, State> {
   }
 }
 
-const StyledRoot = styled.span``
+const StyledRoot = styled.span`
+  display: inline-flex;
+  align-items: center;
+`
 const StyledLinkWrapper = styled.span`
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+  font-size: 13px;
   color: royalblue;
   :hover {
     text-decoration: underline;

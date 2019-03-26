@@ -1,7 +1,7 @@
 export default {
-  siteTitle : `How react works`,
+  siteTitle : `How React Works`,
   getStarted: `Get Started`,
   home      : {
-    introduction: `A Highway to Build Your Static Docs Website`
+    introduction: `Get to Know How React Runs Under the Hood`
   }
 }

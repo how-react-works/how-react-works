@@ -48,7 +48,7 @@ export default class Home extends Component<Props, State> {
                 color: COLOR_PRIMARY_TEXT_UNDER_DARK,
                 fontSize: '60px',
                 fontWeight: 'bold',
-              }}>TSDOCS</span>
+              }}>{ texts.siteTitle }</span>
               <p style={{
                 fontSize: '30px',
                 color: COLOR_PRIMARY_DARK_BACKGROUND,

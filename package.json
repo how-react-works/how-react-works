@@ -11,6 +11,12 @@
     "site": "browser-sync start --server --watch --files how-react-works.github.io/**/* --startPath /how-react-works.github.io",
     "serve": "gatsby serve"
   },
+  "nodemonConfig": {
+    "watch": [
+      "locale/**/*",
+      "gatsby/**/*"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/how-react-works/how-react-works.git"

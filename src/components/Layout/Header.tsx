@@ -36,8 +36,9 @@ export default class Header extends Component<Props, State> {
   }
   render() {
     const { slug } = this.props
-    const { rootPath = "/" } = this.props.pageContext || {}
+    const { rootPath = "/", texts } = this.props.pageContext
     const isHomePage = !slug
+
     return (
       <div
         style={{
@@ -63,7 +64,7 @@ export default class Header extends Component<Props, State> {
             }}
           >
             {/* <img src="/svg/ts.svg" height="24px" /> */}
-            <img src={URL_LOGO} width="36px" height="24px" />
+            {/* <img src={URL_LOGO} width="36px" height="24px" /> */}
             <span
               style={{
                 margin: "0 0 0 10px",
@@ -72,12 +73,12 @@ export default class Header extends Component<Props, State> {
                 color: COLOR_PRIMARY_TEXT_UNDER_LIGHT
               }}
             >
-              TSDocs
+              { texts.siteTitle }
             </span>
           </div>
         </Link>
 
-        <div>
+        <StyledNavLinksWrapper>
           {this.links.map((link, index) => (
             <Link className={CLASS_EMPTY_LINK} key={index} to={link.to}>
               <StyledNavItem
@@ -98,11 +99,16 @@ export default class Header extends Component<Props, State> {
           <StyledNavItem>
             <LocaleSwitch pageContext={ this.props.pageContext } />
           </StyledNavItem>
-        </div>
+        </StyledNavLinksWrapper>
       </div>
     )
   }
 }
+
+const StyledNavLinksWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const StyledNavItem: any = styled.span`
   margin: 0 50px 0 0;
