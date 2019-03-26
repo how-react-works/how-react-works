@@ -1,14 +1,18 @@
-- label: 整体流程
-  href: /cn/whole-flow
+---i18n
+en: /
+cn: /cn/
+---
+- label: <0>整体流程</0><@test/>
+  href: <3><@cn/></3>whole-flow
 - label: Fiber
-  href: /cn/fiber
-- label: 模块
+  href: <4><@cn/></4>fiber
+- label: <1>模块</1>
   foldable: true
   folded: false
   items:
     - label: JSX
-      href: /cn/jsx
-    - label: 为什么setState是异步的
-      href: /cn/why-setstate-is-async
-    - label: React事件系统是如何运作的123123123
-      href: /cn/how-react-event-system-works
+      href: <5><@cn/></5>jsx
+    - label: <2>为什么setState是异步的</2>
+      href: <6><@cn/></6>why-setstate-is-async
+    - label: <8>React事件系统是如何运作的</8>
+      href: <7><@cn/></7>how-react-event-system-works

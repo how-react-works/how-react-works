@@ -19,8 +19,8 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.getElementById('app'))
 ```
 
-![](https://terry-su.github.io/CDN/images/how-react-works/setState-and-on-click.svg)
-* [点击此处查看大图](https://terry-su.github.io/CDN/images/how-react-works/setState-and-on-click.svg)
+![](https://terry-su.github.io/CDN/images/how-react-works/setState-and-on-click_mini.png)
+*[点击此处查看原图](https://terry-su.github.io/CDN/images/how-react-works/setState-and-on-click.png)*
 
 上方为通过工具,基于Chrome浏览器开发者工具中的性能图表数据，生成的React内部方法运行的流程图。   
 从中可以明显看出，React内部方法非常多。把所有方法都拎出来一个个讲，显示不太合理也没有必要。 但我们可以顺着流程走一遍，会发现它的主要几个大流程是：
