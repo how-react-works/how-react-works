@@ -8,7 +8,7 @@ import { CategoryType } from '@/__typings__/Category'
 import Category from '@/components/Category/Category'
 import Layout from '@/components/Layout/Layout'
 import markdownCSS from '@/styles/emotion/markdown'
-import { STYLE_SIDEBAR_WIDTH } from '@/styles/styles'
+import { BACKGROUND, STYLE_SIDEBAR_WIDTH } from '@/styles/styles'
 import DefaultProps from '@/utils/DefaultProps'
 import { css } from '@emotion/core'
 
@@ -42,9 +42,10 @@ export default class DocTemplate extends Component<Props, State> {
             display: flex;
             justify-content: center;
             width: 100%;
-            height: 100%;
+            min-height: 100%;
             padding: 40px 20px 40px 80px;
-            overflow: auto;
+            background:${BACKGROUND};
+            /* overflow: auto; */
           `}
         >
           <div

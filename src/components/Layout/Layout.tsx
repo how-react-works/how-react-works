@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 import LocaleSwitch from '@/components/LocaleSwitch/LocaleSwitch'
 import { COLOR_PRIMARY_DARK_BACKGROUND } from '@/styles/colors'
-import { STYLE_NAV_HEIGHT, STYLE_SIDEBAR_WIDTH } from '@/styles/styles'
+import { BACKGROUND, STYLE_NAV_HEIGHT, STYLE_SIDEBAR_WIDTH } from '@/styles/styles'
 
 import Flex from '../Flex/Flex'
 import HeadHelmet from '../HeadHelmet'
@@ -25,52 +25,65 @@ class Props {
 export default class Layout extends Component<Props, any> {
   render() {
     const { enableSidebar, categoryKey, slug, renderCategory } = this.props
+    const { rootPath, pathname } = this.props.pageContext
+    const isRootPage = rootPath === pathname
     return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%"
-        }}
-      >
-        <HeadHelmet pageContext={this.props.pageContext}/>
-        <Header slug={slug} pageContext={this.props.pageContext} />
+      <StyledRoot isRootPage={isRootPage}>
+        <StyledContentWrapper isRootPage={isRootPage}>
+          <HeadHelmet pageContext={this.props.pageContext} />
+          <Header slug={slug} pageContext={this.props.pageContext} />
 
-       
-
-        <Flex height={`calc( 100% - ${STYLE_NAV_HEIGHT}px )`}>
-          {enableSidebar && (
+          <Flex height={`calc( 100% - ${STYLE_NAV_HEIGHT}px )`}>
+            {enableSidebar && (
+              <div
+                style={{
+                  boxSizing: "border-box",
+                  width: `${STYLE_SIDEBAR_WIDTH}px`,
+                  height: "100%",
+                  padding: "40px 0 0 0",
+                  background: BACKGROUND,
+                  borderRight: "1px solid rgba(200,200,200,0.2)",
+                  overflow: "auto"
+                }}
+              >
+                {renderCategory && renderCategory()}
+              </div>
+            )}
             <div
               style={{
                 boxSizing: "border-box",
-                width: `${STYLE_SIDEBAR_WIDTH}px`,
+                width: enableSidebar
+                  ? `calc(100% - ${STYLE_SIDEBAR_WIDTH}px)`
+                  : "100%",
                 height: "100%",
-                padding: "40px 0 0 0",
-                background: "white",
-                borderRight: "1px solid rgba(200,200,200,0.2)",
-                overflow: "auto",
+                // background: BACKGROUND,
+                overflow: "auto"
               }}
             >
-              {renderCategory && renderCategory()}
+              {this.props.children}
             </div>
-          )}
-          <div
-            style={{
-              boxSizing: "border-box",
-              width: enableSidebar
-                ? `calc(100% - ${STYLE_SIDEBAR_WIDTH}px)`
-                : "100%",
-              height: "100%",
-              background: "white",
-              overflow: "auto"
-            }}
-          >
-            {this.props.children}
-          </div>
-        </Flex>
+          </Flex>
 
-        <Footer />
-      </div>
+          <Footer />
+        </StyledContentWrapper>
+      </StyledRoot>
     )
   }
 }
+
+const StyledRoot: any = styled.div`
+  width: 100%;
+  height: 100%;
+  ${props =>
+    true
+      ? `background: no-repeat center / cover url('https://terry-su.github.io/CDN/images/how-react-works/homeBackground.jpg')`
+      : ``};
+`
+
+const StyledContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  ${props => (! props.isRootPage ? `background: rgba(255, 255, 255, 0.8)` : ``)}
+`
 

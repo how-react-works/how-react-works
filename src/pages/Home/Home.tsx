@@ -2,7 +2,6 @@ import { Link } from 'gatsby'
 import React, { Component } from 'react'
 
 import Layout from '@/components/Layout/Layout'
-import { URL_HOME_BG } from '@/constants/urls'
 import { CLASS_EMPTY_LINK } from '@/styles/classNames'
 import {
     COLOR_PRIMARY_DARK_BACKGROUND, COLOR_PRIMARY_TEXT_UNDER_DARK, COLOR_PRIMARY_TEXT_UNDER_LIGHT
@@ -26,7 +25,6 @@ export default class Home extends Component<Props, State> {
             placeItems: "center",
             width: "100%",
             height: "100%",
-            background: `no-repeat center / cover url('${URL_HOME_BG}')`
           }}
         >
           <div
@@ -35,7 +33,6 @@ export default class Home extends Component<Props, State> {
               placeItems: "center",
               width: '100%',
               height: '100%',
-              background: 'rgba(255, 255, 255, 0.7)',
             }}
           >
             <div

@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { URL_GITHUB, URL_LOGO } from '@/constants/urls'
 import { CLASS_EMPTY_LINK } from '@/styles/classNames'
 import { COLOR_PRIMARY_TEXT_UNDER_LIGHT } from '@/styles/colors'
-import { STYLE_NAV_HEIGHT } from '@/styles/styles'
+import { BACKGROUND, STYLE_NAV_HEIGHT } from '@/styles/styles'
 import { css, jsx } from '@emotion/core'
 
 import Flex from '../Flex/Flex'
@@ -48,7 +48,7 @@ export default class Header extends Component<Props, State> {
           alignItems: "center",
           height: `${STYLE_NAV_HEIGHT}px`,
           padding: "0 80px",
-          background: "white",
+          // background: BACKGROUND,
           ...(isHomePage
             ? {}
             : {

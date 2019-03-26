@@ -54,7 +54,7 @@ export default class Category extends Component<Props, State> {
 
   onLabelClick = () => {}
 
-  onWholeLineClick = (event) => {
+  onWholeLineClick = event => {
     const { foldable, href } = this.props.category
     // if (foldable) {
     //   this.onFoldIconClick(event)
@@ -68,7 +68,7 @@ export default class Category extends Component<Props, State> {
     }
   }
 
-  onFoldIconClick = (event) => {
+  onFoldIconClick = event => {
     event.stopPropagation()
     this.setState(prev => ({
       isFolded: !prev.isFolded
@@ -95,7 +95,7 @@ export default class Category extends Component<Props, State> {
     return (
       <StyledRoot>
         <StyledCategoryItemWrapper
-          paddingLeft={ paddingLeft }
+          paddingLeft={paddingLeft}
           css={css`
             &:hover {
               color: ${isActiveItem
@@ -114,18 +114,20 @@ export default class Category extends Component<Props, State> {
         >
           {foldable && (
             <span
-              css={css`
-                font-size: 12px;
-              `}
+              className="expandingIcon"
               onClick={this.onFoldIconClick}
             >
               {isExpanding ? "∧" : "∨"}
             </span>
           )}
-          <span css={css`
-            margin: 0 0 0 7px;
-            white-space: nowrap;
-          `} onClick={this.onLabelClick}>{label} </span>
+          <span
+            css={css`
+              white-space: nowrap;
+            `}
+            onClick={this.onLabelClick}
+          >
+            {label}{" "}
+          </span>
         </StyledCategoryItemWrapper>
 
         {this.isExpanding &&
@@ -144,7 +146,6 @@ export default class Category extends Component<Props, State> {
   }
 }
 
-
 const StyledRoot = styled.div`
   min-width: 100%;
 `
@@ -157,10 +158,13 @@ const StyledCategoryItemWrapper = styled.div`
   min-width: 100%;
   height: 37px;
   line-height: 37px;
-  margin: 5px 0 0 0;
   padding: 0 0 0 ${props => props.paddingLeft}px;
   font-size: 16px;
   color: #343;
   cursor: pointer;
 
+  > .expandingIcon {
+    margin: 0 7px 0 0;
+    font-size: 12px;
+  }
 `
