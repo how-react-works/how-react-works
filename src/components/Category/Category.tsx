@@ -1,5 +1,6 @@
 import { navigate } from 'gatsby'
 import React, { Component } from 'react'
+import styled from 'styled-components'
 
 import { CategoryType } from '@/__typings__/Category'
 import { COLOR_PRIMARY_TEXT_UNDER_DARK } from '@/styles/colors'
@@ -10,7 +11,7 @@ class Props extends DefaultProps {
   category: CategoryType
   level?: number
   paddingLeft?: number
-  slug?: string
+  pathname?: string
 }
 
 class State {
@@ -19,11 +20,11 @@ class State {
 
 const levelsMap = {
   1: css`
-    height: 37px;
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0;
-    color: "black";
+    /* height: 37px; */
+    /* font-size: 14px; */
+    /* font-weight: bold; */
+    /* margin: 0; */
+    /* color: "black"; */
   `
 }
 
@@ -76,7 +77,7 @@ export default class Category extends Component<Props, State> {
 
   render() {
     const { category, level = 1 } = this.props
-    let { paddingLeft = BASIC_PADDING, slug } = this.props
+    let { paddingLeft = BASIC_PADDING, pathname } = this.props
     const {
       foldable = false,
       folded = false,
@@ -85,31 +86,17 @@ export default class Category extends Component<Props, State> {
     } = category
     const { label, items = [] } = category
     const { isExpanding } = this
-    const isActiveItem = slug === `${href}/`
+    const isActiveItem = pathname === `${href}`
 
-    if (level > 2) {
+    if (level > 1) {
       paddingLeft = paddingLeft + 20
     }
 
     return (
-      <div
-        style={{
-          minWidth: "100%"
-        }}
-      >
-        <div
+      <StyledRoot>
+        <StyledCategoryItemWrapper
+          paddingLeft={ paddingLeft }
           css={css`
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            height: 20px;
-            margin: 5px 0 0 0;
-            padding: 0 0 0 ${paddingLeft}px;
-            font-size: 16px;
-            color: #343;
-            cursor: pointer;
-
             &:hover {
               color: ${isActiveItem
                 ? COLOR_PRIMARY_TEXT_UNDER_DARK
@@ -120,7 +107,6 @@ export default class Category extends Component<Props, State> {
             ${isActiveItem
               ? `
       color: ${COLOR_PRIMARY_TEXT_UNDER_DARK};
-      font-weight: bolder;
       `
               : ""}
           `}
@@ -138,8 +124,9 @@ export default class Category extends Component<Props, State> {
           )}
           <span css={css`
             margin: 0 0 0 7px;
+            white-space: nowrap;
           `} onClick={this.onLabelClick}>{label} </span>
-        </div>
+        </StyledCategoryItemWrapper>
 
         {this.isExpanding &&
           items &&
@@ -149,10 +136,31 @@ export default class Category extends Component<Props, State> {
               category={item}
               level={level + 1}
               paddingLeft={paddingLeft}
-              slug={slug}
+              pathname={pathname}
             />
           ))}
-      </div>
+      </StyledRoot>
     )
   }
 }
+
+
+const StyledRoot = styled.div`
+  min-width: 100%;
+`
+
+const StyledCategoryItemWrapper = styled.div`
+  box-sizing: border-box;
+  /* display: flex; */
+  /* align-items: center; */
+  display: inline-block;
+  min-width: 100%;
+  height: 37px;
+  line-height: 37px;
+  margin: 5px 0 0 0;
+  padding: 0 0 0 ${props => props.paddingLeft}px;
+  font-size: 16px;
+  color: #343;
+  cursor: pointer;
+
+`

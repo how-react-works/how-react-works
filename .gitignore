@@ -18,5 +18,8 @@ bundle.js
 .cache
 
 
+# i18n
+.backup
+
 # site
 how-react-works.github.io

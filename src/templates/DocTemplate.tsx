@@ -25,16 +25,15 @@ export default class DocTemplate extends Component<Props, State> {
   }
 
   render() {
-    const { categories = [] } = this.props.pageContext
+    const { categories = [], pathname } = this.props.pageContext
     const { markdownRemark } = this.props.data
     const { html, frontmatter={}, headings, fields } = markdownRemark
     const { title, categoryKey } = frontmatter
     const { slug } =fields
 
-
     return (
       <Layout enableSidebar={true} categoryKey={categoryKey} slug={ slug } pageContext={this.props.pageContext} renderCategory={
-        () => categories.map( (category, index) => <Category key={ index } category={ category }/> )
+        () => categories.map( (category, index) => <Category key={ index } category={ category } pathname={pathname}/> )
       }>
         <div
           css={css`

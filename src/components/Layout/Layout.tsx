@@ -45,9 +45,9 @@ export default class Layout extends Component<Props, any> {
                 width: `${STYLE_SIDEBAR_WIDTH}px`,
                 height: "100%",
                 padding: "40px 0 0 0",
-                overflow: "auto",
                 background: "white",
-                borderRight: "1px solid #e8e8e8"
+                borderRight: "1px solid #e8e8e8",
+                overflow: "auto",
               }}
             >
               {renderCategory && renderCategory()}

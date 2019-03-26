@@ -2,7 +2,7 @@ import { Link } from 'gatsby'
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
-import { URL_BAR, URL_FOO, URL_LOGO, URL_TSDOCS } from '@/constants/urls'
+import { URL_GITHUB, URL_LOGO } from '@/constants/urls'
 import { CLASS_EMPTY_LINK } from '@/styles/classNames'
 import { COLOR_PRIMARY_TEXT_UNDER_LIGHT } from '@/styles/colors'
 import { STYLE_NAV_HEIGHT } from '@/styles/styles'
@@ -91,7 +91,7 @@ export default class Header extends Component<Props, State> {
             </Link>
           ))}
           <StyledNavItem>
-            <a className={CLASS_EMPTY_LINK} href={URL_TSDOCS}>
+            <a className={CLASS_EMPTY_LINK} href={URL_GITHUB}>
               Github
             </a>
             <OuterLinkIcon />
