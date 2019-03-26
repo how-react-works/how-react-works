@@ -14,7 +14,7 @@ export default async function createPagesByLocale( locale: string, {
 }: any ) {
   // # generate categorys
   class CategoryYamlMap {
-    // the parent directory name of `.category`
+    // the parent directory name of `__category__`
     categoryRootName: string
     getCategory: Function
   }

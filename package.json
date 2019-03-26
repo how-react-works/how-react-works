@@ -9,7 +9,8 @@
     "build": "gatsby build",
     "build-site": "gatsby build",
     "site": "browser-sync start --server --watch --files how-react-works.github.io/**/* --startPath /how-react-works.github.io",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "i18n": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node gatsby/i18n"
   },
   "nodemonConfig": {
     "watch": [

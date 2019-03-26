@@ -3,6 +3,7 @@
     "src/**/*",
     "./locale/**/*",
     "./gatsby/**/*",
+    "../../i18n-sync/src/index"
   ],
   "exclude": ["node_modules"],
   "compilerOptions": {
@@ -14,6 +15,6 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "lib": ["dom", "es2016"],
-    "esModuleInterop": true
+    "esModuleInterop": true,
   }
 }

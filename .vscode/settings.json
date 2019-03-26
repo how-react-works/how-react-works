@@ -9,4 +9,9 @@
   "prettier.eslintIntegration": true,
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "importSorter.importStringConfiguration.hasSemicolon": false,
+
+  "files.exclude": {
+    "**/.backup": true,
+    "build-contents": true
+  }
 }
