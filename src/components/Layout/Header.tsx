@@ -52,7 +52,7 @@ export default class Header extends Component<Props, State> {
           ...(isHomePage
             ? {}
             : {
-                borderBottom: "1px solid #e8e8e8"
+                borderBottom: "1px solid rgba(200,200,200,0.2)"
               })
         }}
       >

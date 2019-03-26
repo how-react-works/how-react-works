@@ -1,4 +1,5 @@
-// import '../styles/markdown.css'
+import '../styles/markdown.css'
+
 import { graphql } from 'gatsby'
 import Prism from 'prismjs'
 import React, { Component } from 'react'
@@ -38,11 +39,11 @@ export default class DocTemplate extends Component<Props, State> {
         <div
           css={css`
             box-sizing: border-box;
-            display: grid;
-            place-items: center;
+            display: flex;
+            justify-content: center;
             width: 100%;
             height: 100%;
-            padding: 10px 20px;
+            padding: 40px 20px 40px 80px;
             overflow: auto;
           `}
         >
@@ -50,6 +51,7 @@ export default class DocTemplate extends Component<Props, State> {
             css={css`
               width: 100%;
               height: 100%;
+              padding-bottom: '40px';
               max-width: calc(980px - ${STYLE_SIDEBAR_WIDTH}px);
             `}
           >

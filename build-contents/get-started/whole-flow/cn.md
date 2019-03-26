@@ -1,6 +1,6 @@
 首先，我们需要知道React运行的一个完整流程。  
 以一个简单的计数器为例，主要用来看React执行内部方法的流程。
-```jsx
+```js
 class App extends React.Component {
   state = { count: 0 }
   componentDidMount() {
@@ -33,7 +33,7 @@ ReactDOM.render(<App />, document.getElementById('app'))
 
 
 ##  `ReactDOM` 渲染一个DOM节点
-```
+```js
 ReactDOM.render( <App />, docuemnt.getElementById('app') )
 ```
 

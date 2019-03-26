@@ -46,7 +46,7 @@ export default class Layout extends Component<Props, any> {
                 height: "100%",
                 padding: "40px 0 0 0",
                 background: "white",
-                borderRight: "1px solid #e8e8e8",
+                borderRight: "1px solid rgba(200,200,200,0.2)",
                 overflow: "auto",
               }}
             >
