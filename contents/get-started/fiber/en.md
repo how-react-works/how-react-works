@@ -57,10 +57,10 @@
 
 
 <25>Based on Fiber, we can say that the React process is primarily two-step:</25>
-1. <26>Apply colours to a drawing</26>
-2. <27>submit</27>
+1. <26>Render</26>
+2. <27>Submit</27>
 
-## <28>Apply colours to a drawing</28>
+## <28>Render</28>
 <29>Two entrances:</29>
 1. `ReactDOM.render(...)`
 2. `setState(...)`
@@ -84,7 +84,7 @@ function workLoop(isYieldy) {
 }
 ```
 
-## <31>submit</31>
+## <31>Submit</31>
 <32>Update the DOM</32>
 
 

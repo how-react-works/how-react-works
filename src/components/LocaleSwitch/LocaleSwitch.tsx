@@ -40,7 +40,7 @@ export default class LocaleSwitch extends Component<Props, State> {
   getLink( targetLocale ): string {
     const { locale: currentLocale } = this.props.pageContext
     const decoratedName = localeNameToDecoratedNameMap[ targetLocale ]
-    const { pathname } = this.props.pageContext
+    const { pathname = '' } = this.props.pageContext
     if (currentLocale === namesMap.EN) {
       return `/${decoratedName}${pathname}`
     }

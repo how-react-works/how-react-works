@@ -1,9 +1,10 @@
-先说如果setState是同步的，我们会遇到什么问题？
+Let's start with what happens if setState is synchronous?
 
-1. 性能问题
+1. Performance issues
 
-假设这里有多个父组件和子组件，子组件通过父组件的部分状态值进行更新，会有多次多余的更新出现。  
-一个最简单的案例：
+Suppose there are multiple parent and child components, and the child component is updated through a partial state value of the parent component, and multiple redundant updates occur.
+
+The simplest case:
 ```js
 class Child extends Component {
     state = { childCount: 0 }
@@ -11,7 +12,7 @@ class Child extends Component {
         this.setState( { childCount: 1 } )
     }
     render() {
-        return 数:{this.state。childCount + this.props。parentCount}
+        return <div>Count: { this.state.childCount + this.props.parentCount }</div>
     }
 }
 
@@ -25,9 +26,9 @@ class Parent extends Component {
     }
 }
 ```
-如果setState是同步的，子组件会更新3次。而如果是异步，子组件只会更新2次。
+If setState is synchronous, the child component is updated three times. If it is asynchronous, the child component will be updated only twice.
 
 
-2. 无法实现异步渲染  
+2. Unable to implement asynchronous rendering  
 
-如果setState是同步的，异步渲染将不再可能。而React以后会通过异步渲染，在一些异步情形中有效提升性能和用户体验。
+If setState is synchronous, asynchronous rendering is no longer possible. React will then be rendered asynchronously, improving performance and user experience in some asynchronous scenarios.

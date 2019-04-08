@@ -6,11 +6,12 @@
   "scripts": {
     "develop": "cross-env TS_NODE_PROJECT=tsconfig.node.json nodemon --verbose -e ts,tsx --exec node -r ts-node/register node_modules/gatsby/dist/bin/gatsby.js develop -p 8081",
     "start": "npm run develop",
-    "build": "gatsby build",
+    "build": "npm run ts-gatsby build",
     "build-site": "gatsby build",
     "site": "browser-sync start --server --watch --files how-react-works.github.io/**/* --startPath /how-react-works.github.io",
     "serve": "gatsby serve",
-    "i18n": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node gatsby/i18n"
+    "i18n": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node gatsby/i18n",
+    "ts-gatsby": "cross-env TS_NODE_PROJECT=tsconfig.node.json nodemon --verbose -e ts,tsx --exec node -r ts-node/register node_modules/gatsby/dist/bin/gatsby.js"
   },
   "nodemonConfig": {
     "watch": [

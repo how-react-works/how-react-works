@@ -1,5 +1,5 @@
-React中的JSX是`React.createElement(component, props, ...children)`的语法糖。  
-不使用JSX:
+<0>React中的JSX是`React.createElement(component, props, ...children)`的语法糖。</0>  
+<1>不使用JSX:</1>
 ```js
 class Hello extends React.Component {
   render() {
@@ -7,7 +7,7 @@ class Hello extends React.Component {
   }
 }
 ```
-使用JSX：
+<2>使用JSX：</2>
 ```js
 class Hello extends React.Component {
   render() {
@@ -16,12 +16,12 @@ class Hello extends React.Component {
 }
 ```
 
-## 实现原理
-通过Babel编译JavaScript代码.
+## <3>实现原理</3>
+<4>通过Babel编译JavaScript代码.</4>
 
-Node端和浏览器端的实现：
+<5>Node端和浏览器端的实现：</5>
 * NodeJS: [@babel/plugin-transform-react-jsx](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx)
-* 浏览器: 引入babel脚本后，在类型为"texst/babel"的脚本标签添加JSX代码
+* <6>浏览器: 引入babel脚本后，在类型为"texst/babel"的脚本标签添加JSX代码</6>
 
 ```html
 <!DOCTYPE html>
@@ -32,13 +32,13 @@ Node端和浏览器端的实现：
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     
-    <!-- 不要在生产环境中使用这个脚本: -->
+    <!-- <7>不要在生产环境中使用这个脚本:</7> -->
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      // 此处为JSX代码
+      // <8>此处为JSX代码</8>
       ReactDOM.render(
         <h1>Hello, world!</h1>,
         document.getElementById('root')

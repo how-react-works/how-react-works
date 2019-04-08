@@ -57,10 +57,10 @@ Side effects (label)：
 
 
 Based on Fiber, we can say that the React process is primarily two-step:
-1. Apply colours to a drawing
-2. submit
+1. Render
+2. Submit
 
-## Apply colours to a drawing
+## Render
 Two entrances:
 1. `ReactDOM.render(...)`
 2. `setState(...)`
@@ -84,7 +84,7 @@ function workLoop(isYieldy) {
 }
 ```
 
-## submit
+## Submit
 Update the DOM
 
 

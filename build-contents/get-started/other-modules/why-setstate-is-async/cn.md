@@ -11,7 +11,7 @@ class Child extends Component {
         this.setState( { childCount: 1 } )
     }
     render() {
-        return Count: { this.state.childCount + this.props.parentCount }
+        return <div>Count: { this.state.childCount + this.props.parentCount }</div>
     }
 }
 

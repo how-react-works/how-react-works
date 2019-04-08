@@ -15,7 +15,7 @@ class State {
 
 export default class HeadHelmet extends Component<Props, State> {
   render() {
-    const { texts } = this.props.pageContext
+    const { texts = {} } = this.props.pageContext
     return  <Helmet defaultTitle={texts.siteTitle} titleTemplate={`%s | ${texts.siteTitle}`}>
           <html lang="en" />
           <meta

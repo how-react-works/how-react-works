@@ -16,7 +16,7 @@ class State {}
 
 export default class Home extends Component<Props, State> {
   render() {
-    const { texts = '', rootPath } = this.props.pageContext
+    const { texts = {}, rootPath } = this.props.pageContext
     return (
       <Layout pageContext={this.props.pageContext}>
         <div
@@ -49,7 +49,7 @@ export default class Home extends Component<Props, State> {
               <p style={{
                 fontSize: '30px',
                 color: COLOR_PRIMARY_DARK_BACKGROUND,
-              }}>{  texts.home.introduction }</p>
+              }}>{  (texts.home || {}).introduction }</p>
               <Link className={ CLASS_EMPTY_LINK } to={ `${rootPath}get-started` }>
               <div style={{
                 padding: '15px 20px',

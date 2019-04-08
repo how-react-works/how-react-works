@@ -26,7 +26,7 @@ class TypeLink {
 
 export default class Header extends Component<Props, State> {
   get links(): TypeLink[] {
-    const { rootPath, texts} = this.props.pageContext
+    const { rootPath, texts = {}} = this.props.pageContext
     return [
       {
         label: texts.getStarted,
@@ -36,7 +36,7 @@ export default class Header extends Component<Props, State> {
   }
   render() {
     const { slug } = this.props
-    const { rootPath = "/", texts } = this.props.pageContext
+    const { rootPath = "/", texts = {} } = this.props.pageContext
     const isHomePage = !slug
 
     return (

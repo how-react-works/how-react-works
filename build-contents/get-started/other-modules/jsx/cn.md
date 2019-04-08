@@ -11,7 +11,7 @@ class Hello extends React.Component {
 ```js
 class Hello extends React.Component {
   render() {
-    return Hello {this.props.name};
+    return <div>Hello {this.props.name}</div>;
   }
 }
 ```
@@ -25,10 +25,10 @@ Node端和浏览器端的实现：
 
 ```html
 <!DOCTYPE html>
-
+<html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World
+    <title>Hello World</title>
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     
