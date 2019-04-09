@@ -1,13 +1,13 @@
 import path from 'path'
 
-import { i18nContents } from '../../../i18n-sync/src/index'
+import { i18nContents } from '../../../i18ning/src/index'
 
 export default function i18n() {
   
   const locales = [ 'en', 'cn' ]
   const backupName = '.backup'
   const syncConfig = {
-    enableTranslation: true
+    enableTranslation: false
   }
   // # markdown
   {

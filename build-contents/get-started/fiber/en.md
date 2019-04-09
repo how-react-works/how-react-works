@@ -5,7 +5,7 @@ Is also
 
 * One unit of work   
 
-Because of Fiber's granularity, it's possible to React:
+Because of Fiber's granularity, it enable React:
 * Pause, reuse, or even give up some work
 * Assign priorities to different types of work
 

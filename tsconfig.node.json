@@ -3,7 +3,7 @@
     "src/**/*",
     "./locale/**/*",
     "./gatsby/**/*",
-    "../../i18n-sync/src/index"
+    "../../i18ning/src/index"
   ],
   "exclude": ["node_modules"],
   "compilerOptions": {

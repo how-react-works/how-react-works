@@ -11,7 +11,7 @@
     "site": "browser-sync start --server --watch --files how-react-works.github.io/**/* --startPath /how-react-works.github.io",
     "serve": "gatsby serve",
     "i18n": "cross-env TS_NODE_PROJECT=tsconfig.node.json ts-node gatsby/i18n",
-    "ts-gatsby": "cross-env TS_NODE_PROJECT=tsconfig.node.json nodemon --verbose -e ts,tsx --exec node -r ts-node/register node_modules/gatsby/dist/bin/gatsby.js"
+    "ts-gatsby": "cross-env TS_NODE_PROJECT=tsconfig.node.json node -r ts-node/register node_modules/gatsby/dist/bin/gatsby.js"
   },
   "nodemonConfig": {
     "watch": [

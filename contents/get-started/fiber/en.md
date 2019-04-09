@@ -5,7 +5,7 @@
 
 * <3>One unit of work</3>   
 
-<4>Because of Fiber's granularity, it's possible to React:</4>
+<4>Because of Fiber's granularity, it enable React:</4>
 * <5>Pause, reuse, or even give up some work</5>
 * <6>Assign priorities to different types of work</6>
 
