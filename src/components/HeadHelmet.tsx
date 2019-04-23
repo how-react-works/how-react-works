@@ -18,6 +18,7 @@ export default class HeadHelmet extends Component<Props, State> {
     const { texts = {} } = this.props.pageContext
     return  <Helmet defaultTitle={texts.siteTitle} titleTemplate={`%s | ${texts.siteTitle}`}>
           <html lang="en" />
+          <meta name="description" content={texts.metaDesc}/>
           <meta
             name="viewport"
             content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
